@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Import your functions and modules here
-from PyPDF2 import PdfReader
+#from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.vectorstores import FAISS
@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-
+'''
 # Load the PDF document
 pdf_docs = r"C:\Users\tiruv\Downloads\MF Data - March 2023 - April 2022.pdf"
 
@@ -34,7 +34,7 @@ def get_vector_store(text_chunks):
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
     vector_store = FAISS.from_texts(text_chunks, embedding=embeddings)
     vector_store.save_local("faiss_index")
-
+'''
 # Load conversational chain
 def get_conversational_chain():
     prompt_template = """
